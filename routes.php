@@ -4,4 +4,6 @@
  * The $router instance is made available to you
  */
 
-$router->get('test', 'DataController@test');
+$router->get('test', 'ExampleController@test');
+
+$router->get('wordpress-version', 'ExampleController@wordpress');
