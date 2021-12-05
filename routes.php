@@ -4,6 +4,10 @@
  * The $router instance is made available to you
  */
 
-$router->get('test', 'ExampleController@test');
 
 $router->get('wordpress-version', 'ExampleController@wordpress');
+
+
+$router->middleware(['ExampleMiddleware'], [
+    $router->get('test', 'ExampleController@test')
+]);

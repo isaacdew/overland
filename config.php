@@ -5,6 +5,7 @@
 
 return [
     'app' => [
-        'basePath' => 'myplugin/v1'
+        'basePath' => 'myplugin/v1',
+        'pluginRoot' => plugin_dir_path(__FILE__)
     ]
 ];
