@@ -4,13 +4,18 @@ namespace Overland\Core;
 
 
 class Router {
-    protected $basePath = 'myplugin/v1';
+    protected $basePath;
 
     protected $routes = [
         'GET' => [],
         'POST' => []
     ];
 
+    private function __construct()
+    {
+        global $overland_config;
+        $this->basePath = $overland_config->get('app.basePath');
+    }
 
     public static function load($file) {
         $router = new static;
