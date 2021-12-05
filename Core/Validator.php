@@ -31,7 +31,7 @@ class Validator {
                 $this->errors = [...$this->errors, ...$is_valid->get_error_messages()];
                 continue;
             }
-            $validInput[] = $this->input[$key];
+            $validInput[$key] = $this->input[$key];
         }
         $this->showErrors();
         return $validInput;
