@@ -10,7 +10,6 @@ class Router {
 
     protected App $app;
     protected RouteCollection $routes;
-    protected Middleware $middlware;
 
     public function __construct($app)
     {
@@ -31,6 +30,18 @@ class Router {
 
     public function post($path, $action) {
         return $this->addRoute($path, $action, 'POST');
+    }
+
+    public function registerRoutes() {
+        add_action('rest_api_init', function() {
+            foreach($this->routes as $route) {
+                $route->register();
+            }
+        });
+    }
+
+    public function getRoutes() {
+        return $this->routes;
     }
 
     protected function addRoute($path, $action, $method) {

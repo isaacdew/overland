@@ -1,9 +1,8 @@
 <?php
 
-namespace Overland\Core;
+namespace Overland\Core\Middleware;
 
 use Overland\Core\Router\RouteCollection;
-use Overland\Core\Router\Routes;
 use WP_REST_Request;
 
 class Middleware {

@@ -16,15 +16,13 @@ class Route {
         $this->path = $path;
         $this->action = $action;
         $this->method = $method;
-
-        register_rest_route( $this->basePath, $this->path, array(
-            'methods' => $this->method,
-            'callback' => $this->instantiateAction()
-          ) );
     }
 
-    public static function register($basePath, $path, $action, $method) {
-        return new static($basePath, $path, $action, $method);
+    public function register() {
+        register_rest_route( $this->basePath, $this->path, array(
+            'methods' => $this->method,
+            'callback' => $this->actionInstance()
+          ) );
     }
 
     public function name($name) {
@@ -36,6 +34,10 @@ class Route {
     }
 
     public function getPath() {
+        return $this->path;
+    }
+
+    public function getFullPath() {
         return '/' . $this->basePath . '/' . $this->path;
     }
 
@@ -51,7 +53,7 @@ class Route {
         return $this->middleware;
     }
 
-    protected function instantiateAction() {
+    protected function actionInstance() {
         if(is_string($this->action) && str_contains($this->action, '@')) {
             [$controller, $method] = explode('@', $this->action);
     
