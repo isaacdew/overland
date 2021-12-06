@@ -2,14 +2,15 @@
 /**
  * Don't touch :D
  */
+
+use Overland\Core\App;
 use Overland\Core\Config;
-use Overland\Core\Router\Router;
+use Overland\Core\Router\RouterServiceProvider;
 
 require_once 'vendor/autoload.php';
 
-global $overland_config;
-$overland_config = new Config();
+$app = new App();
 
-add_action('rest_api_init', function() use ($overland_config) {
-    Router::load($overland_config->get('app.pluginRoot') . 'routes.php');
-});
+$app['config'] = new Config();
+$app->register(RouterServiceProvider::class);
+$app->boot();

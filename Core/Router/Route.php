@@ -7,6 +7,7 @@ class Route {
     protected $path;
     protected $action;
     protected $method;
+    protected $name = '';
     protected $middleware = [];
 
     public function __construct($basePath, $path, $action, $method)
@@ -24,6 +25,14 @@ class Route {
 
     public static function register($basePath, $path, $action, $method) {
         return new static($basePath, $path, $action, $method);
+    }
+
+    public function name($name) {
+        $this->name = $name;
+    }
+
+    public function getName() {
+        return $this->name;
     }
 
     public function getPath() {

@@ -4,10 +4,11 @@
  * The $router instance is made available to you
  */
 
+use Overland\Core\Facades\Route;
 
-$router->get('wordpress-version', 'ExampleController@wordpress');
+Route::get('wordpress-version', 'ExampleController@wordpress');
 
 
-$router->middleware(['ExampleMiddleware'], [
-    $router->get('test', 'ExampleController@test')
+Route::middleware(['ExampleMiddleware'], [
+    Route::get('test', 'ExampleController@test')
 ]);

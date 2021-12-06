@@ -2,20 +2,21 @@
 
 namespace Overland\Core;
 
+use Overland\Core\Router\RouteCollection;
 use Overland\Core\Router\Routes;
 use WP_REST_Request;
 
 class Middleware {
     protected WP_REST_Request $request;
 
-    protected Routes $routes;
+    protected RouteCollection $routes;
 
     public function __construct()
     {
         add_filter( 'rest_pre_dispatch', [$this, 'filterRequest'], 0, 3);
     }
 
-    public function guard(Routes $routes) {
+    public function guard(RouteCollection $routes) {
         $this->routes = $routes;
         return $this;
     }

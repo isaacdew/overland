@@ -2,7 +2,7 @@
 
 namespace Overland\Core\Router;
 
-class Routes {
+class RouteCollection {
     protected $routes = [];
 
     public function __construct(array $routes = [])
@@ -14,10 +14,12 @@ class Routes {
         $this->routes[] = $route;
     }
 
+    public function findByName($name) {
+        return reset(array_filter($this->routes, fn($route) => $route->getName() == $name)) ?? false;
+    }
+
     public function find($path, $method) {
         return reset(array_filter($this->routes, function($route) use ($path, $method) {
-            $test = $route->getPath();
-            $test2 = $route->getMethod();
             return $route->getPath() == $path && $route->getMethod() == $method;
         })) ?? false;
     }
