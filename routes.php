@@ -9,6 +9,6 @@ use Overland\Core\Facades\Route;
 Route::get('wordpress-version', 'ExampleController@wordpress');
 
 
-Route::middleware(['ExampleMiddleware'], [
+Route::middleware(['ExampleMiddleware'])->group('testing/', [
     Route::get('test', 'ExampleController@test')
 ]);

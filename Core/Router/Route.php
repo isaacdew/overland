@@ -27,6 +27,8 @@ class Route {
 
     public function name($name) {
         $this->name = $name;
+
+        return $this;
     }
 
     public function getName() {
@@ -51,6 +53,24 @@ class Route {
 
     public function getMiddleware() {
         return $this->middleware;
+    }
+
+    public function setAttributes(array $attributes) {
+        if(isset($attributes['middleware'])) {
+            $this->middleware($attributes['middleware']);
+        }
+
+        if(isset($attributes['name'])) {
+            $this->name($attributes['name']);
+        }
+
+        return $this;
+    }
+
+    public function prefix($prefix) {
+        $this->path = trim($prefix, '/') . '/' . $this->path;
+
+        return $this;
     }
 
     protected function actionInstance() {

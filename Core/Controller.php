@@ -2,7 +2,8 @@
 
 namespace Overland\Core;
 
-class Controller {
+abstract class Controller {
+    
     protected function validate($input, $rules) {
         return Validator::make($input, $rules)->validate();
     }
