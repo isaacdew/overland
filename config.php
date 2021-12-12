@@ -6,6 +6,6 @@
 return [
     'app' => [
         'basePath' => 'myplugin/v1',
-        'pluginRoot' => plugin_dir_path(__FILE__)
+        'pluginRoot' => OVERLAND_PLUGIN_ROOT
     ]
 ];

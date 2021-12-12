@@ -1,7 +1,19 @@
 {
     "autoload": {
         "psr-4": {
-            "Overland\\": "./"
+            "Overland\\App\\": "App/"
         }
+    },
+    "dependencies": {
+        "isaacdew/overland-framework": "*"
+    },
+    "repositories": [
+        {
+            "type": "github",
+            "url": "https://github.com/isaacdew/overland-framework.git"
+        }
+    ],
+    "require": {
+        "isaacdew/overland-framework": "@dev"
     }
 }
