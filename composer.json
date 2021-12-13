@@ -4,9 +4,6 @@
             "Overland\\App\\": "app/"
         }
     },
-    "dependencies": {
-        "isaacdew/overland-framework": "*"
-    },
     "repositories": [
         {
             "type": "github",
