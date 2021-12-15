@@ -3,6 +3,7 @@
 namespace Overland\App\Controllers;
 
 use Overland\Core\Controller;
+use Overland\Core\Facades\Auth;
 use WP_REST_Request;
 
 class ExampleController extends Controller {
@@ -20,5 +21,12 @@ class ExampleController extends Controller {
 
     public function wordpress() {
         return ['version' => get_bloginfo('version')];
+    }
+
+    public function authenticate(WP_REST_Request $request) {
+        $username = $request->get_param('username');
+        $password = $request->get_param('password');
+
+        return Auth::authenticate($username, $password);
     }
 }
