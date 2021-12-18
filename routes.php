@@ -6,11 +6,11 @@
 
 use Overland\Core\Facades\Route;
 
+
+
+Route::prefix('/testing')->middleware(['example', 'auth'])->group(function() {
+    Route::get('test', 'ExampleController@test');
+});
 Route::get('wordpress-version', 'ExampleController@wordpress');
-
-
-Route::middleware(['example', 'auth'])->group('testing/', [
-    Route::get('test', 'ExampleController@test')
-]);
 
 Route::post('login', 'ExampleController@authenticate');
