@@ -61,7 +61,7 @@ Inside the Controllers directory, create a new file with the name following the 
 ```php
 namespace Overland\App\Middleware;
 
-use Overland\Core\Middleware;
+use Overland\Core\Interfaces\Middleware;
 
 class YourMiddleware implements Middleware
 {
