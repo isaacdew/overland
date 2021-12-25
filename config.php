@@ -13,6 +13,7 @@ return [
         'middleware' => [
             'auth' => \Overland\Core\Authentication\AuthMiddleware::class,
             'example' => \Overland\App\Middleware\ExampleMiddleware::class
-        ]
+        ],
+        'secretKey' => OVERLAND_APP_KEY
     ]
 ];
