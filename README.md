@@ -4,9 +4,9 @@ WordPress plugin API framework that mimics Laravel's APIs. Allows you to add rou
 ## Features
 
 - Middleware
-- Route Authentication
-- Authorization
-- Validation
+- [Authentication](https://github.com/isaacdew/overland/wiki/Authentication)
+- [Authorization](https://github.com/isaacdew/overland/wiki/Controllers#authorization)
+- [Validation](https://github.com/isaacdew/overland/wiki/Controllers#validation)
 - Easy to add Routes
 
 ## Getting Started
@@ -52,7 +52,7 @@ class YourController extends Controller
 Then in your `routes.php` file:
 
 ```php
-Route::get('your-path', 'YourContoller@method');
+Route::get('your-path', 'YourContoller@myourMethod');
 ```
 
 ### Creating Middleware
@@ -84,5 +84,7 @@ Then inside your `config.php`, you'll want to add your middleware to the list:
 
 And now you can use it with a route inside your `routes.php`:
 ```php
-Route::middleware(['your-middleware'])->post('/uri', 'YourController@method');
+Route::middleware(['your-middleware'])->post('/uri', 'YourController@yourMethod');
 ```
+
+For more information check out the wiki.
