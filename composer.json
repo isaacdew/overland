@@ -4,13 +4,7 @@
             "Overland\\App\\": "app/"
         }
     },
-    "repositories": [
-        {
-            "type": "github",
-            "url": "https://github.com/isaacdew/overland-framework.git"
-        }
-    ],
     "require": {
-        "isaacdew/overland-framework": "@dev"
+        "isaacdew/overland-framework": "v1.0.0"
     }
 }
