@@ -5,6 +5,6 @@
         }
     },
     "require": {
-        "isaacdew/overland-framework": "v1.0.0"
+        "isaacdew/overland-framework": "v1.0.1"
     }
 }
