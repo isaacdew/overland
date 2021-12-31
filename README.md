@@ -5,6 +5,7 @@ WordPress plugin API framework that mimics Laravel's APIs. Allows you to add rou
 
 - [Authentication](https://github.com/isaacdew/overland/wiki/Authentication)
 - [Authorization](https://github.com/isaacdew/overland/wiki/Controllers#authorization)
+- [Caching](https://github.com/isaacdew/overland/wiki/Caching)
 - [Middleware](https://github.com/isaacdew/overland/wiki/Middleware)
 - [Easy to add Routes](https://github.com/isaacdew/overland/wiki/Routes)
 - [Validation](https://github.com/isaacdew/overland/wiki/Controllers#validation)
