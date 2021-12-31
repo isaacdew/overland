@@ -4,6 +4,7 @@ namespace Overland\App\Controllers;
 
 use Overland\Core\Controller;
 use Overland\Core\Facades\Auth;
+use Overland\Core\Facades\Cache;
 use WP_REST_Request;
 
 class ExampleController extends Controller {
@@ -20,7 +21,11 @@ class ExampleController extends Controller {
     }
 
     public function wordpress() {
-        return ['version' => get_bloginfo('version')];
+        $version = Cache::remember('wordpressVersion', DAY_IN_SECONDS, function() {
+            return get_bloginfo('version');
+        });
+
+        return ['version' => $version];
     }
 
     public function authenticate(WP_REST_Request $request) {
